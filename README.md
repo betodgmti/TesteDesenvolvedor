@@ -50,14 +50,14 @@ Crie um sistema (CRUD)  ações:
 
 - [ ] Os clientes podem ser do tipo Interno e Externo
 
-        na tabela TB_TIPO_CLIENTE 2 registros resolvem isso deve ser utilizada esta tabela
+        na tabela TB_TIPO_CLIENTE, 2 registros resolverão. Para isso  deve ser utilizada esta tabela.
 
-- [ ] Uma lista com todos os clientes cadastrados devem ser exibido e quando selecionado item da lista deve abrir a tela de edição
+- [ ] Uma lista com todos os clientes cadastrados, deverá ser exibida e quando selecionado o item da lista, deverá abrir a tela de edição
 
-        Um cliente poder ser inserido, atualizado e excluido
+        Um cliente pode ser inserido, atualizado e excluído
 
 
 ### Dicas
 
-- Os produtos podem ficar em memória, não é necessário persistir os dados
-- Se resolver perssistir o banco de dados deve ser anexado no projeto (script e insert)
+- Os clientes podem ficar cadastrados em memória, não é necessário persistir os dados
+- Se resolver persistir, o banco de dados deverá ser anexado no projeto (script e insert)
