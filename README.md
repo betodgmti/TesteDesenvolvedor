@@ -10,6 +10,8 @@ Faça um fork deste repositório.
 
 Ao finalizar o teste, submeta um pull request para o repositório que nosso time será notificado.
 
+A aplicação deve ser desenvolvida para WEB (de preferencia MVC)
+
 ### Tarefas
 
 Com o seguinte diagrama:
