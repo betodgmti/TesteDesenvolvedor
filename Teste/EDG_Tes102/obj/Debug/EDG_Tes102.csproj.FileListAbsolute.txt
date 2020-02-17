@@ -1,0 +1,11 @@
+C:\DGM.GITHUB\zzzContratacao\TesteDesenvolvedor\Teste\EDG_Tes102\bin\Debug\EDG_Tes102.exe.config
+C:\DGM.GITHUB\zzzContratacao\TesteDesenvolvedor\Teste\EDG_Tes102\bin\Debug\Database1.mdf
+C:\DGM.GITHUB\zzzContratacao\TesteDesenvolvedor\Teste\EDG_Tes102\bin\Debug\Database1_log.ldf
+C:\DGM.GITHUB\zzzContratacao\TesteDesenvolvedor\Teste\EDG_Tes102\bin\Debug\EDG_Tes102.exe
+C:\DGM.GITHUB\zzzContratacao\TesteDesenvolvedor\Teste\EDG_Tes102\bin\Debug\EDG_Tes102.pdb
+C:\DGM.GITHUB\zzzContratacao\TesteDesenvolvedor\Teste\EDG_Tes102\obj\Debug\EDG_Tes102.csprojResolveAssemblyReference.cache
+C:\DGM.GITHUB\zzzContratacao\TesteDesenvolvedor\Teste\EDG_Tes102\obj\Debug\EDG_Tes102.Form1.resources
+C:\DGM.GITHUB\zzzContratacao\TesteDesenvolvedor\Teste\EDG_Tes102\obj\Debug\EDG_Tes102.Properties.Resources.resources
+C:\DGM.GITHUB\zzzContratacao\TesteDesenvolvedor\Teste\EDG_Tes102\obj\Debug\EDG_Tes102.csproj.GenerateResource.Cache
+C:\DGM.GITHUB\zzzContratacao\TesteDesenvolvedor\Teste\EDG_Tes102\obj\Debug\EDG_Tes102.exe
+C:\DGM.GITHUB\zzzContratacao\TesteDesenvolvedor\Teste\EDG_Tes102\obj\Debug\EDG_Tes102.pdb
