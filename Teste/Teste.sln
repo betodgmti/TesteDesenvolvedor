@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDG_Tes102", "EDG_Tes102\EDG_Tes102.csproj", "{3B52CDD7-25EA-4B4C-AD32-8FBD809ECADB}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WebApplicationDGM", "WebApplicationDGM\WebApplicationDGM.vbproj", "{8F9999CE-E5D3-4DFD-ABA4-64ECE2CBEE08}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B52CDD7-25EA-4B4C-AD32-8FBD809ECADB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B52CDD7-25EA-4B4C-AD32-8FBD809ECADB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B52CDD7-25EA-4B4C-AD32-8FBD809ECADB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B52CDD7-25EA-4B4C-AD32-8FBD809ECADB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F9999CE-E5D3-4DFD-ABA4-64ECE2CBEE08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F9999CE-E5D3-4DFD-ABA4-64ECE2CBEE08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F9999CE-E5D3-4DFD-ABA4-64ECE2CBEE08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F9999CE-E5D3-4DFD-ABA4-64ECE2CBEE08}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {325DD365-DD22-4C91-A5DA-9F85FC2E8C2E}
+	EndGlobalSection
+EndGlobal
