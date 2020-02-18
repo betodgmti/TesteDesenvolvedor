@@ -1,0 +1,44 @@
+﻿@model IEnumerable<WebAppTesteDGM.Models.ClienteModel>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NOM_USUAL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOM_COMPLETO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NRO_CPF)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.COD_TIPO_CLIENTE)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOM_USUAL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOM_COMPLETO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NRO_CPF)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DSC_TIPO_CLIENTE)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.COD_CLIENTE }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.COD_CLIENTE }, new { onclick = "return confirm('Confirma a exclusão do cliente?');" })
+        </td>
+    </tr>
+}
+
+</table>
