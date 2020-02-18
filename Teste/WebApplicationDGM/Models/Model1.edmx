@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Database1ModelB.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TB_CLIENTE">
+          <Key>
+            <PropertyRef Name="COD_CLIENTE" />
+          </Key>
+          <Property Name="COD_CLIENTE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOM_USUAL" Type="varchar" MaxLength="40" />
+          <Property Name="NOM_COMPLETO" Type="varchar" MaxLength="255" />
+          <Property Name="NRO_CPF" Type="numeric" Precision="11" Scale="0" />
+          <Property Name="DT_EXCLUIDO" Type="datetime" />
+          <Property Name="COD_TIPO_CLIENTE" Type="int" />
+        </EntityType>
+        <EntityType Name="TB_TIPO_CLIENTE">
+          <Key>
+            <PropertyRef Name="COD_TIPO_CLIENTE" />
+          </Key>
+          <Property Name="COD_TIPO_CLIENTE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DSC_TIPO_CLIENTE" Type="varchar" MaxLength="21" />
+          <Property Name="DT_EXCLUIDO" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\ROBERTO.PAVUSA\SOURCE\REPOS\TESTEDESENVOLVEDOR-MASTER\TESTE\WEBAPPLICATIONDGM\APP_DATA\DATABASE1.MDF.dbo.View' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View">
+          <Key>
+            <PropertyRef Name="COD_CLIENTE" />
+          </Key>
+          <Property Name="COD_CLIENTE" Type="int" Nullable="false" />
+          <Property Name="NOM_COMPLETO" Type="varchar" MaxLength="255" />
+          <Property Name="NOM_USUAL" Type="varchar" MaxLength="40" />
+          <Property Name="NRO_CPF" Type="numeric" Precision="11" Scale="0" />
+          <Property Name="DSC_TIPO_CLIENTE" Type="varchar" MaxLength="21" />
+        </EntityType>
+        <Association Name="FK__TB_CLIENT__COD_T__25869641">
+          <End Role="TB_TIPO_CLIENTE" Type="Self.TB_TIPO_CLIENTE" Multiplicity="0..1" />
+          <End Role="TB_CLIENTE" Type="Self.TB_CLIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_TIPO_CLIENTE">
+              <PropertyRef Name="COD_TIPO_CLIENTE" />
+            </Principal>
+            <Dependent Role="TB_CLIENTE">
+              <PropertyRef Name="COD_TIPO_CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Database1ModelBStoreContainer">
+          <EntitySet Name="TB_CLIENTE" EntityType="Self.TB_CLIENTE" Schema="GESTAO" store:Type="Tables" />
+          <EntitySet Name="TB_TIPO_CLIENTE" EntityType="Self.TB_TIPO_CLIENTE" Schema="GESTAO" store:Type="Tables" />
+          <EntitySet Name="View" EntityType="Self.View" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View].[COD_CLIENTE] AS [COD_CLIENTE], 
+    [View].[NOM_COMPLETO] AS [NOM_COMPLETO], 
+    [View].[NOM_USUAL] AS [NOM_USUAL], 
+    [View].[NRO_CPF] AS [NRO_CPF], 
+    [View].[DSC_TIPO_CLIENTE] AS [DSC_TIPO_CLIENTE]
+    FROM [dbo].[View] AS [View]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__TB_CLIENT__COD_T__25869641" Association="Self.FK__TB_CLIENT__COD_T__25869641">
+            <End Role="TB_TIPO_CLIENTE" EntitySet="TB_TIPO_CLIENTE" />
+            <End Role="TB_CLIENTE" EntitySet="TB_CLIENTE" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Database1ModelB" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TB_CLIENTE">
+          <Key>
+            <PropertyRef Name="COD_CLIENTE" />
+          </Key>
+          <Property Name="COD_CLIENTE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOM_USUAL" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="NOM_COMPLETO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="NRO_CPF" Type="Decimal" Precision="11" Scale="0" />
+          <Property Name="DT_EXCLUIDO" Type="DateTime" Precision="3" />
+          <Property Name="COD_TIPO_CLIENTE" Type="Int32" />
+          <NavigationProperty Name="TB_TIPO_CLIENTE" Relationship="Self.FK__TB_CLIENT__COD_T__25869641" FromRole="TB_CLIENTE" ToRole="TB_TIPO_CLIENTE" />
+        </EntityType>
+        <EntityType Name="TB_TIPO_CLIENTE">
+          <Key>
+            <PropertyRef Name="COD_TIPO_CLIENTE" />
+          </Key>
+          <Property Name="COD_TIPO_CLIENTE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DSC_TIPO_CLIENTE" Type="String" MaxLength="21" FixedLength="false" Unicode="false" />
+          <Property Name="DT_EXCLUIDO" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="TB_CLIENTE" Relationship="Self.FK__TB_CLIENT__COD_T__25869641" FromRole="TB_TIPO_CLIENTE" ToRole="TB_CLIENTE" />
+        </EntityType>
+        <EntityType Name="View">
+          <Key>
+            <PropertyRef Name="COD_CLIENTE" />
+          </Key>
+          <Property Name="COD_CLIENTE" Type="Int32" Nullable="false" />
+          <Property Name="NOM_COMPLETO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="NOM_USUAL" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="NRO_CPF" Type="Decimal" Precision="11" Scale="0" />
+          <Property Name="DSC_TIPO_CLIENTE" Type="String" MaxLength="21" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK__TB_CLIENT__COD_T__25869641">
+          <End Role="TB_TIPO_CLIENTE" Type="Self.TB_TIPO_CLIENTE" Multiplicity="0..1" />
+          <End Role="TB_CLIENTE" Type="Self.TB_CLIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_TIPO_CLIENTE">
+              <PropertyRef Name="COD_TIPO_CLIENTE" />
+            </Principal>
+            <Dependent Role="TB_CLIENTE">
+              <PropertyRef Name="COD_TIPO_CLIENTE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TB_CLIENTE" EntityType="Self.TB_CLIENTE" />
+          <EntitySet Name="TB_TIPO_CLIENTE" EntityType="Self.TB_TIPO_CLIENTE" />
+          <EntitySet Name="Views" EntityType="Self.View" />
+          <AssociationSet Name="FK__TB_CLIENT__COD_T__25869641" Association="Self.FK__TB_CLIENT__COD_T__25869641">
+            <End Role="TB_TIPO_CLIENTE" EntitySet="TB_TIPO_CLIENTE" />
+            <End Role="TB_CLIENTE" EntitySet="TB_CLIENTE" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Database1ModelBStoreContainer" CdmEntityContainer="Database1Entities">
+          <EntitySetMapping Name="TB_CLIENTE">
+            <EntityTypeMapping TypeName="Database1ModelB.TB_CLIENTE">
+              <MappingFragment StoreEntitySet="TB_CLIENTE">
+                <ScalarProperty Name="COD_CLIENTE" ColumnName="COD_CLIENTE" />
+                <ScalarProperty Name="NOM_USUAL" ColumnName="NOM_USUAL" />
+                <ScalarProperty Name="NOM_COMPLETO" ColumnName="NOM_COMPLETO" />
+                <ScalarProperty Name="NRO_CPF" ColumnName="NRO_CPF" />
+                <ScalarProperty Name="DT_EXCLUIDO" ColumnName="DT_EXCLUIDO" />
+                <ScalarProperty Name="COD_TIPO_CLIENTE" ColumnName="COD_TIPO_CLIENTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_TIPO_CLIENTE">
+            <EntityTypeMapping TypeName="Database1ModelB.TB_TIPO_CLIENTE">
+              <MappingFragment StoreEntitySet="TB_TIPO_CLIENTE">
+                <ScalarProperty Name="COD_TIPO_CLIENTE" ColumnName="COD_TIPO_CLIENTE" />
+                <ScalarProperty Name="DSC_TIPO_CLIENTE" ColumnName="DSC_TIPO_CLIENTE" />
+                <ScalarProperty Name="DT_EXCLUIDO" ColumnName="DT_EXCLUIDO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Views">
+            <EntityTypeMapping TypeName="Database1ModelB.View">
+              <MappingFragment StoreEntitySet="View">
+                <ScalarProperty Name="COD_CLIENTE" ColumnName="COD_CLIENTE" />
+                <ScalarProperty Name="NOM_COMPLETO" ColumnName="NOM_COMPLETO" />
+                <ScalarProperty Name="NOM_USUAL" ColumnName="NOM_USUAL" />
+                <ScalarProperty Name="NRO_CPF" ColumnName="NRO_CPF" />
+                <ScalarProperty Name="DSC_TIPO_CLIENTE" ColumnName="DSC_TIPO_CLIENTE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
